@@ -1,0 +1,10 @@
+services:
+  mailhog:
+    image: mailhog/mailhog
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "8025"]
+      interval: 1s
+      timeout: 10s
+      retries: 10
+    ports:
+      - '${DRAKY_MAILHOG_PORT}:8025'

@@ -1,0 +1,7 @@
+id: draky-webapp-php
+variables:
+  DRAKY_PHP_IMAGE: ghcr.io/draky-dev/php8.1-fpm:0.7.0
+  # Required for CLI debugging in PHP Storm and IntelliJ IDEA.
+  # You can replace 'docker' with name of a server with correct mappings configured in your IDE.
+  # Such server has to be defined for its mappings, even if we are debugging only CLI.
+  DRAKY_PHP_IDE_CONFIG: serverName=docker

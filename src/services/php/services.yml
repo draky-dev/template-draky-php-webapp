@@ -1,0 +1,16 @@
+services:
+  php:
+    image: "${DRAKY_PHP_IMAGE}"
+    environment:
+      DRAKY_HOST_UID: "${DRAKY_HOST_UID}"
+      DRAKY_HOST_GID: "${DRAKY_HOST_GID}"
+      DRAKY_OVERRIDE_HOST_IP: "${DRAKY_HOST_IP}"
+      DRAKY_OVERRIDE_HOST_USERNAME: host
+      DRAKY_OVERRIDE_HOST_GROUP: host
+      DRAKY_OVERRIDE_MAILHOG_HOST: mailhog
+      DRAKY_OVERRIDE_WEBSERVER_HOST: webserver
+      PHP_IDE_CONFIG: "${DRAKY_PHP_IDE_CONFIG}"
+    volumes:
+      - "${DRAKY_PROJECT_ROOT}:/var/www/html:cached,rw"
+      - "./resources:/draky-tools.resources:cached,ro"
+      - "./cache/composer:/var/cache/composer:cached,rw"

@@ -1,0 +1,3 @@
+id: draky-webapp-mariadb
+variables:
+  DRAKY_MARIADB_IMAGE: mariadb:10.9.7-jammy

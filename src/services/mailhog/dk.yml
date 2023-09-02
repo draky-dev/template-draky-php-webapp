@@ -1,0 +1,3 @@
+id: draky-webapp-mailhog
+variables:
+  DRAKY_MAILHOG_PORT: 8002

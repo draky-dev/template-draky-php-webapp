@@ -1,0 +1,23 @@
+services:
+  database:
+    extends:
+      file: ../../services/mariadb/services.yml
+      service: mariadb
+  webserver:
+    extends:
+      file: ../../services/nginx/services.yml
+      service: nginx
+    depends_on:
+      - php
+  php:
+    extends:
+      file: ../../services/php/services.yml
+      service: php
+  mailhog:
+    extends:
+      file: ../../services/mailhog/services.yml
+      service: mailhog
+  redis:
+    extends:
+      file: ../../services/redis/services.yml
+      service: redis
