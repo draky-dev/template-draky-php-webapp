@@ -29,7 +29,7 @@ install_build_dependencies_alpine:
 build:
 	[ ! -d "${DIST_PATH}" ] || rm -r ${DIST_PATH}
 	mkdir -p ${DIST_PATH}
-	cp -R ${SRC_PATH}/* ${DIST_PATH}/
+	cp -R ${SRC_PATH}/. ${DIST_PATH}/
 	TEMPLATE_VERSION=${VER} TEMPLATE_ID=${NAME} ./bin/template-renderer.sh -t ./template.dk.yml.template -o ${DIST_PATH}/template.dk.yml
 	mkdir -p ${ADDON_ENTRYPOINT_PATH}
 	wget -qO- ${ADDON_ENTRYPOINT_URL} | tar xv -J -C ${ADDON_ENTRYPOINT_PATH}
