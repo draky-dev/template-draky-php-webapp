@@ -6,5 +6,5 @@ services:
     environment:
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: true
     volumes:
-      - "./resources:/draky-tools.resources:cached,ro"
+      - "./resources:/draky-entrypoint.resources:cached,ro"
       - "${DRAKY_PATH_ADDONS}/draky-entrypoint/draky-entrypoint.sh:/draky-entrypoint.sh:cached"

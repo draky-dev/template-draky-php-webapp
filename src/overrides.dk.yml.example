@@ -1,0 +1,6 @@
+variables:
+  DRAKY_NGINX_FRONT_CONTROLLER: "${DRAKY_NGINX_ROOT}/public_html"
+  DRAKY_NGINX_DOMAIN: webapp.docker.localhost
+  DRAKY_NGINX_PORT: 8000
+dependencies:
+  - draky-webapp-webserver

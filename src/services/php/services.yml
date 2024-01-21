@@ -10,7 +10,12 @@ services:
       DRAKY_OVERRIDE_MAILHOG_HOST: mailhog
       DRAKY_OVERRIDE_WEBSERVER_HOST: webserver
       PHP_IDE_CONFIG: "${DRAKY_PHP_IDE_CONFIG}"
+      DRAKY_ENTRYPOINT_DO_CREATE_HOST_USER: "${DRAKY_HOST_UID}"
     volumes:
       - "${DRAKY_PROJECT_ROOT}:/var/www/html:cached,rw"
-      - "./resources:/draky-tools.resources:cached,ro"
+      - "./resources:/draky-entrypoint.resources:cached,ro"
       - "./cache/composer:/var/cache/composer:cached,rw"
+      - "./init.d:/draky-entrypoint.init.d:cached,ro"
+    draky:
+      addons:
+        - draky-entrypoint

@@ -6,11 +6,11 @@ services:
       DRAKY_OVERRIDE_NGINX_SERVER_NAME: "${DRAKY_NGINX_DOMAIN}"
       DRAKY_OVERRIDE_NGINX_SERVER_ROOT: "${DRAKY_NGINX_FRONT_CONTROLLER}"
       DRAKY_ENTRYPOINT_DO_CREATE_HOST_USER: "${DRAKY_HOST_UID}"
-    entrypoint: "/draky-entrypoint.sh"
-    command: ["/docker-entrypoint.sh", "nginx", "-g", "daemon off;"]
     ports:
       - "${DRAKY_NGINX_PORT}:80"
     volumes:
       - "${DRAKY_PROJECT_ROOT}:/var/www/html:cached,ro"
       - "./resources:/draky-entrypoint.resources:cached"
-      - "${DRAKY_PATH_ADDONS}/draky-entrypoint/draky-entrypoint.sh:/draky-entrypoint.sh:cached"
+    draky:
+      addons:
+        - draky-entrypoint
