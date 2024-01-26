@@ -1,4 +1,4 @@
-NAME = template-example-webapp
+NAME = template-draky-php-webapp
 
 ifndef VERSION
 	override VERSION = local-build
