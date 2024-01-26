@@ -37,3 +37,5 @@ build:
 
 package:
 	tar -cJf ${NAME}.${VER}.tar.xz -C ${DIST_PATH} .
+
+build-package: build package
