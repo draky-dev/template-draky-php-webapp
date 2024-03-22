@@ -11,6 +11,8 @@ services:
       DRAKY_OVERRIDE_WEBSERVER_HOST: webserver
       PHP_IDE_CONFIG: "${DRAKY_PHP_IDE_CONFIG}"
       DRAKY_ENTRYPOINT_DO_CREATE_HOST_USER: "${DRAKY_HOST_UID}"
+      DRAKY_PHP_COMPOSER_HASH: "${DRAKY_PHP_COMPOSER_HASH}"
+      DRAKY_PHP_COMPOSER_HASH_VERIFY: "${DRAKY_PHP_COMPOSER_HASH_VERIFY}"
     volumes:
       - "${DRAKY_PROJECT_ROOT}:/var/www/html:cached,rw"
       - "./resources:/draky-entrypoint.resources:cached,ro"

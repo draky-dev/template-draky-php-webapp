@@ -41,7 +41,9 @@ if [ -f "$COMPOSER_PATH" ]; then
   echo "composer is already installed"
   else
   php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-  php -r "if (hash_file('sha384', 'composer-setup.php') === 'edb40769019ccf227279e3bdd1f5b2e9950eb000c3233ee85148944e555d97be3ea4f40c3c2fe73b22f875385f6a5155') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  if [ "${DRAKY_PHP_COMPOSER_HASH_VERIFY}" -eq 1 ]; then
+    php -r "if (hash_file('sha384', 'composer-setup.php') === '${DRAKY_PHP_COMPOSER_HASH}') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  fi
   php composer-setup.php
   php -r "unlink('composer-setup.php');"
   mv composer.phar "$COMPOSER_PATH"

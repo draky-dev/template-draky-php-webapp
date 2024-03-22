@@ -5,3 +5,5 @@ variables:
   # You can replace 'docker' with name of a server with correct mappings configured in your IDE.
   # Such server has to be defined for its mappings, even if we are debugging only CLI.
   DRAKY_PHP_IDE_CONFIG: serverName=docker
+  DRAKY_PHP_COMPOSER_HASH_VERIFY: 1
+  DRAKY_PHP_COMPOSER_HASH: dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6
