@@ -8,7 +8,7 @@ echo "Installing extensions."
 if php -m | grep -q ^redis; then
   echo "'redis' extension is already enabled"
   else
-  apk add --no-cache pcre-dev zlib-dev libpng-dev $PHPIZE_DEPS && \
+  apk add --no-cache pcre-dev $PHPIZE_DEPS && \
       pecl update-channels && \
       pecl install redis && \
       docker-php-ext-enable redis
@@ -18,6 +18,8 @@ fi
 if php -m | grep -q ^gd; then
   echo "'gd' extension is already enabled"
   else
+  apk add --no-cache zlib-dev libpng-dev libjpeg-dev libfreetype6-dev
+  docker-php-ext-configure gd --with-freetype --with-jpeg
   docker-php-ext-install gd
 fi
 
