@@ -20,7 +20,7 @@ SRC_PATH = ${ROOT}/src
 
 DIST_PATH_ADDONS = ${DIST_INNER_PATH}/addons
 
-ADDON_ENTRYPOINT_VERSION = 0.8.0
+ADDON_ENTRYPOINT_VERSION = 0.9.0
 ADDON_ENTRYPOINT_URL = https://github.com/draky-dev/draky-entrypoint/releases/download/v${ADDON_ENTRYPOINT_VERSION}/draky-entrypoint.${ADDON_ENTRYPOINT_VERSION}.tar.xz
 ADDON_ENTRYPOINT_PATH = ${DIST_PATH_ADDONS}/draky-entrypoint
 
