@@ -37,6 +37,14 @@ if php -m | grep -q ^pdo_mysql; then
   docker-php-ext-install pdo_mysql
 fi
 
+# xdebug
+if php -m | grep -q ^Xdebug; then
+  echo "'xdebug' extension is already enabled"
+  else
+  apk add --no-cache $PHPIZE_DEPS linux-headers
+  pecl install "xdebug-${DRAKY_PHP_XDEBUG_VERSION}"
+fi
+
 # Install composer.
 COMPOSER_PATH='/usr/local/bin/composer'
 if [ -f "$COMPOSER_PATH" ]; then
