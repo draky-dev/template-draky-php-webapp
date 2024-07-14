@@ -3,7 +3,8 @@ upstream backend {
 }
 
 server {
-    server_name ${DRAKY_OVERRIDE_NGINX_SERVER_NAME};
+    # Other services may want to communicate with the app, that's why we allow the "webserver" domain.
+    server_name ${DRAKY_OVERRIDE_NGINX_SERVER_NAME} webserver;
     root ${DRAKY_OVERRIDE_NGINX_SERVER_ROOT};
     access_log /var/log/nginx/access.log;
     error_log /var/log/nginx/error.log;
