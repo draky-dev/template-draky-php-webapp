@@ -58,3 +58,11 @@ if [ -f "$COMPOSER_PATH" ]; then
   php -r "unlink('composer-setup.php');"
   mv composer.phar "$COMPOSER_PATH"
 fi
+
+# git
+# Required for some composer's operations
+if command -v git; then
+  echo "'git' is already installed"
+  else
+  apk add --no-cache git
+fi
