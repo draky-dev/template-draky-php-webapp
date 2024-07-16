@@ -6,7 +6,7 @@ variables:
   # Such server has to be defined for its mappings, even if we are debugging only CLI.
   DRAKY_PHP_IDE_CONFIG: serverName=docker
   DRAKY_PHP_COMPOSER_HASH_VERIFY: 1
-  DRAKY_PHP_COMPOSER_HASH: dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6
+  DRAKY_PHP_COMPOSER_HASH: aab940cd53d285a54c50465820a2080fcb7182a4ba1e5f795abfb10414a4b4be
   DRAKY_PHP_XDEBUG_VERSION: 3.3.2
   # The port xdebug connects to on the host.
   DRAKY_PHP_XDEBUG_PORT: 9000
