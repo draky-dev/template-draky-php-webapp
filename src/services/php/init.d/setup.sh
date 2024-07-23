@@ -37,6 +37,14 @@ if php -m | grep -q ^pdo_mysql; then
   docker-php-ext-install pdo_mysql
 fi
 
+# pdo_pgsql
+if php -m | grep -q ^pdo_pgsql; then
+  echo "'pdo_pgsql' extension is already enabled"
+  else
+  apk add --no-cache libpq-dev
+  docker-php-ext-install pdo_pgsql
+fi
+
 # intl
 if php -m | grep -q ^intl; then
   echo "'intl' extension is already enabled"
