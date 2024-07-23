@@ -38,7 +38,7 @@ if php -m | grep -q ^pdo_mysql; then
 fi
 
 # intl
-if php -m | grep -q ^incl; then
+if php -m | grep -q ^intl; then
   echo "'intl' extension is already enabled"
   else
   apk add --no-cache icu-dev
