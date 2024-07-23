@@ -37,6 +37,14 @@ if php -m | grep -q ^pdo_mysql; then
   docker-php-ext-install pdo_mysql
 fi
 
+# intl
+if php -m | grep -q ^incl; then
+  echo "'intl' extension is already enabled"
+  else
+  apk add --no-cache icu-dev
+  docker-php-ext-install intl
+fi
+
 # xdebug
 if php -m | grep -q ^Xdebug; then
   echo "'xdebug' extension is already enabled"
