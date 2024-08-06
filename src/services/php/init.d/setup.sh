@@ -18,8 +18,8 @@ fi
 if php -m | grep -q ^gd; then
   echo "'gd' extension is already enabled"
   else
-  apk add --no-cache zlib-dev libpng-dev libjpeg-dev libfreetype6-dev
-  docker-php-ext-configure gd --with-freetype --with-jpeg
+  apk add --no-cache zlib-dev libpng-dev libjpeg-dev libfreetype6-dev libwebp-dev
+  docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp
   docker-php-ext-install gd
 fi
 
