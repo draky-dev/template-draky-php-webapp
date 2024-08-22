@@ -2,3 +2,4 @@ id: draky-webapp-node
 variables:
   NODE_DOCKER_IMAGE: node:20.3.1-alpine3.18
   NODE_PACKAGE_JSON_PATH: web/core
+  NODE_WEBPACK_LIVE_RELOAD_PORT: 35729

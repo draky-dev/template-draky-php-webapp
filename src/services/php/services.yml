@@ -15,6 +15,11 @@ services:
       DRAKY_PHP_COMPOSER_HASH_VERIFY: "${DRAKY_PHP_COMPOSER_HASH_VERIFY}"
       DRAKY_PHP_XDEBUG_VERSION: "${DRAKY_PHP_XDEBUG_VERSION}"
       DRAKY_OVERRIDE_PHP_XDEBUG_PORT: "${DRAKY_PHP_XDEBUG_PORT}"
+    healthcheck:
+      test: [ "CMD", "nc", "-z", "127.0.0.1", "9000" ]
+      interval: 1s
+      timeout: 10s
+      retries: 10
     volumes:
       - "${DRAKY_PROJECT_ROOT}:/var/www/html:cached,rw"
       - "./resources:/draky-entrypoint.resources:cached,ro"
