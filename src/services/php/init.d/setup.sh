@@ -53,6 +53,14 @@ if php -m | grep -q ^intl; then
   docker-php-ext-install intl
 fi
 
+# zip
+if php -m | grep -q ^zip; then
+  echo "'zip' extension is already enabled"
+  else
+  apk add --no-cache libzip-dev
+  docker-php-ext-install zip
+fi
+
 # xdebug
 if php -m | grep -q ^Xdebug; then
   echo "'xdebug' extension is already enabled"
