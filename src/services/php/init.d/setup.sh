@@ -27,6 +27,13 @@ if php -m | grep -q ^gd; then
     docker-php-ext-install -j$(getconf _NPROCESSORS_ONLN) gd
 fi
 
+# OP Cache
+if php -m | grep -q "^Zend OPcache"; then
+  echo "'Zend OPcache' extension is already enabled"
+  else
+  docker-php-ext-install opcache
+fi
+
 # PDO
 if php -m | grep -q ^PDO; then
   echo "'PDO' extension is already enabled"
