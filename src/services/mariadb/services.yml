@@ -5,6 +5,7 @@ services:
     command: ["docker-entrypoint.sh", "mariadbd"]
     environment:
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: true
+      MARIADB_DATABASE: "${DRAKY_MARIADB_DATABASE}"
     volumes:
       - "./resources:/draky-entrypoint.resources:cached,ro"
       - "${DRAKY_PATH_ADDONS}/draky-entrypoint/draky-entrypoint.sh:/draky-entrypoint.sh:cached"
