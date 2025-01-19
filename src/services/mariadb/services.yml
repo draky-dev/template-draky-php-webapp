@@ -6,6 +6,8 @@ services:
     environment:
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: true
       MARIADB_DATABASE: "${DRAKY_MARIADB_DATABASE}"
+    ports:
+      - "${DRAKY_MARIADB_PORT_EXPOSED}:3306"
     volumes:
       - "./resources:/draky-entrypoint.resources:cached,ro"
       - "./init.d:/docker-entrypoint-initdb.d:cached,ro"
