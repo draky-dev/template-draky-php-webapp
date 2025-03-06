@@ -12,7 +12,7 @@ ARGS=(
 )
 
 if [ -z "$1" ]; then
-  printf "%b\nERROR: Package as an argument is required%b" "${COLOR_RED}" "${COLOR_RESET}"
+  printf "%b\nERROR: Package as an argument is required\n%b" "${COLOR_RED}" "${COLOR_RESET}"
   exit 1;
 fi
 
@@ -21,13 +21,13 @@ composer create-project "$@" "${TEMP_PATH}"
 
 for file in "$PROJECT_PATH"/*; do
    if [ -f "$TEMP_PATH/\${file##*/}" ]; then
-      printf "%b\nERROR: Conflicting files exist in the project%b" "${COLOR_RED}" "${COLOR_RESET}"
+      printf "%b\nERROR: Conflicting files exist in the project\n%b" "${COLOR_RED}" "${COLOR_RESET}"
       cleanup
       exit 1
    fi
 done
 
-cp -rnP ${TEMP_PATH}/* "${PROJECT_PATH}"
+cp -rnP ${TEMP_PATH}/. "${PROJECT_PATH}"
 
-printf "%b\nSUCCESS: Project has been created.%b" "${COLOR_GREEN}" "${COLOR_RESET}"
+printf "%b\nSUCCESS: Project has been created.\n%b" "${COLOR_GREEN}" "${COLOR_RESET}"
 EOF
