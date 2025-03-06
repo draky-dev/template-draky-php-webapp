@@ -21,7 +21,7 @@ services:
       timeout: 10s
       retries: 10
     volumes:
-      - "${DRAKY_PROJECT_ROOT}:/var/www/html:cached,rw"
+      - "${DRAKY_PROJECT_ROOT}:${DRAKY_PHP_CONTAINER_ROOT}:cached,rw"
       - "./resources:/draky-entrypoint.resources:cached,ro"
       - "./cache/composer:/var/cache/composer:cached,rw"
       - "./init.d:/draky-entrypoint.init.d:cached,ro"

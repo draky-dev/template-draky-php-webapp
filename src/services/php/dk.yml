@@ -1,6 +1,7 @@
 id: draky-webapp-php
 variables:
   DRAKY_PHP_IMAGE: php:8.3.1-fpm-alpine3.19
+  DRAKY_PHP_CONTAINER_ROOT: /var/www/html
   # Required for CLI debugging in PHP Storm and IntelliJ IDEA.
   # You can replace 'docker' with name of a server with correct mappings configured in your IDE.
   # Such server has to be defined for its mappings, even if we are debugging only CLI.
