@@ -1,0 +1,2 @@
+help: Runs `create-project` in the root directory. The only argument is the `[package_name]:[version]`.
+user: host
