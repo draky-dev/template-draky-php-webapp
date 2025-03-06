@@ -12,7 +12,7 @@ services:
       POSTGRES_HOST_AUTH_METHOD: ${DRAKY_POSTGRES_HOST_AUTH_METHOD}
     volumes:
       - "./resources:/draky-entrypoint.resources:cached,ro"
-      - "./resources/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+      - "./initdb.d:/docker-entrypoint-initdb.d"
     ports:
       - ${DRAKY_POSTGRES_EXPOSED_PORT}:5432
     draky:

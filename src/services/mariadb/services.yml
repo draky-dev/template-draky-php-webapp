@@ -10,5 +10,5 @@ services:
       - "${DRAKY_MARIADB_PORT_EXPOSED}:3306"
     volumes:
       - "./resources:/draky-entrypoint.resources:cached,ro"
-      - "./init.d:/docker-entrypoint-initdb.d:cached,ro"
+      - "./initdb.d:/docker-entrypoint-initdb.d:cached,ro"
       - "${DRAKY_PATH_ADDONS}/draky-entrypoint/draky-entrypoint.sh:/draky-entrypoint.sh:cached"
