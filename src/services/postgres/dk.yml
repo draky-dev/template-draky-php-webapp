@@ -1,0 +1,8 @@
+id: draky-webapp-postgres
+variables:
+  DRAKY_POSTGRES_IMAGE: postgres:16-alpine
+  DRAKY_POSTGRES_USER: root
+  # For production environments this should be changed to empty value.
+  DRAKY_POSTGRES_HOST_AUTH_METHOD: trust
+  DRAKY_POSTGRES_PASS: ''
+  DRAKY_POSTGRES_EXPOSED_PORT: 5432

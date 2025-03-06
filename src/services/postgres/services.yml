@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: "${DRAKY_POSTGRES_IMAGE}"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-d", "app"]
+      interval: 1s
+      timeout: 10s
+      retries: 10
+    environment:
+      POSTGRES_USER: ${DRAKY_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${DRAKY_POSTGRES_PASS}
+      POSTGRES_HOST_AUTH_METHOD: ${DRAKY_POSTGRES_HOST_AUTH_METHOD}
+    volumes:
+      - "./resources:/draky-entrypoint.resources:cached,ro"
+      - "./resources/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+    ports:
+      - ${DRAKY_POSTGRES_EXPOSED_PORT}:5432
+    draky:
+      addons:
+        - draky-entrypoint
