@@ -1,6 +1,6 @@
 # This is an example of file that could be used to override some variables used by nginx.
 variables:
-  DRAKY_NGINX_FRONT_CONTROLLER: "${DRAKY_NGINX_ROOT}/public_html"
+  DRAKY_NGINX_FRONT_CONTROLLER: "${DRAKY_NGINX_ROOT}/public"
   DRAKY_NGINX_DOMAIN: webapp.docker.localhost
   DRAKY_NGINX_PORT: 8000
 
