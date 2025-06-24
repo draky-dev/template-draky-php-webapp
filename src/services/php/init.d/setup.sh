@@ -2,6 +2,8 @@
 
 # NOTE: You can also prepare your own image with all these extensions included.
 
+set -e
+
 echo "Installing extensions."
 
 # redis
@@ -45,6 +47,7 @@ fi
 if php -m | grep -q ^pdo_mysql; then
   echo "'pdo_mysql' extension is already enabled"
   else
+  apk add --no-cache icu-dev
   docker-php-ext-install pdo_mysql
 fi
 
