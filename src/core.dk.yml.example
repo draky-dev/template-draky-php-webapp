@@ -1,3 +1,0 @@
-variables:
-    DRAKY_PROJECT_ID: example-project
-    DRAKY_ENVIRONMENT: dev
