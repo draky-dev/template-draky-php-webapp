@@ -6,6 +6,11 @@ services:
     environment:
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: true
       MARIADB_DATABASE: "${DRAKY_MARIADB_DATABASE}"
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh", "--su-mysql", "--connect", "--innodb_initialized" ]
+      interval: 1s
+      timeout: 10s
+      retries: 10
     ports:
       - "${DRAKY_MARIADB_PORT_EXPOSED}:3306"
     volumes:
