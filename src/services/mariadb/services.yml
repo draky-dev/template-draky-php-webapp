@@ -1,8 +1,6 @@
 services:
   mariadb:
     image: "${DRAKY_MARIADB_IMAGE}"
-    entrypoint: "/draky-entrypoint.sh"
-    command: ["docker-entrypoint.sh", "mariadbd"]
     environment:
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: true
       MARIADB_DATABASE: "${DRAKY_MARIADB_DATABASE}"
@@ -16,4 +14,6 @@ services:
     volumes:
       - "./resources:/draky-entrypoint.resources:cached,ro"
       - "./initdb.d:/docker-entrypoint-initdb.d:cached,ro"
-      - "${DRAKY_PATH_ADDONS}/draky-entrypoint/draky-entrypoint.sh:/draky-entrypoint.sh:cached"
+    draky:
+      addons:
+        - draky-entrypoint
