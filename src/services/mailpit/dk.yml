@@ -1,0 +1,3 @@
+id: draky-webapp-mailpit
+variables:
+  DRAKY_MAILPIT_PORT: 8002

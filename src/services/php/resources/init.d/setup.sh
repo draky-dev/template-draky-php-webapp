@@ -76,8 +76,8 @@ if php -m | grep -q ^zip; then
 fi
 
 # xdebug
-if php -m | grep -q ^Xdebug; then
-  echo "'xdebug' extension is already enabled"
+if pecl list | grep xdebug; then
+  echo "'xdebug' extension is already installed"
   else
   apk add --no-cache $PHPIZE_DEPS linux-headers
   pecl install "xdebug-${DRAKY_PHP_XDEBUG_VERSION}"
@@ -103,4 +103,12 @@ if command -v git; then
   echo "'git' is already installed"
   else
   apk add --no-cache git
+fi
+
+# patch
+# Required for composer's patching
+if command -v patch; then
+  echo "'patch' is already installed"
+else
+  apk add --no-cache patch
 fi
