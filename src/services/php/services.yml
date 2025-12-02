@@ -4,7 +4,6 @@ services:
     environment:
       DRAKY_HOST_UID: "${DRAKY_HOST_UID}"
       DRAKY_HOST_GID: "${DRAKY_HOST_GID}"
-      DRAKY_OVERRIDE_HOST_IP: "${DRAKY_HOST_IP}"
       DRAKY_OVERRIDE_HOST_USERNAME: "${DRAKY_HOST_UID}"
       DRAKY_OVERRIDE_HOST_GROUP: "${DRAKY_HOST_GID}"
       DRAKY_OVERRIDE_MAILHOG_HOST: mailhog
@@ -24,6 +23,8 @@ services:
       - "${DRAKY_PROJECT_ROOT}:${DRAKY_PHP_CONTAINER_ROOT}:cached,rw"
       - "./resources:/draky-entrypoint.resources:cached,ro"
       - "./cache/composer:/var/cache/composer:cached,rw"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     draky:
       addons:
         - draky-entrypoint
