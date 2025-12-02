@@ -36,7 +36,7 @@ build:
 	mkdir -p ${ADDON_ENTRYPOINT_PATH}
 	wget -qO- ${ADDON_ENTRYPOINT_URL} | tar xv -J -C ${ADDON_ENTRYPOINT_PATH}
 
-package:
+package: build
 	tar -cJf ${NAME}.${VER}.tar.xz -C ${DIST_PATH} .
 
 build-package: build package
