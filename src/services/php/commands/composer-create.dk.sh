@@ -17,7 +17,7 @@ if [ -z "$1" ]; then
 fi
 
 docker run "${ARGS[@]}" --rm -w="${DRAKY_PHP_CONTAINER_ROOT}" -u="${DRAKY_HOST_UID}:${DRAKY_HOST_GID}" -v "${DRAKY_PROJECT_ROOT}:${DRAKY_PHP_CONTAINER_ROOT}:cached,rw" "$DRAKY_COMPOSER_IMAGE" sh -s << EOF
-composer create-project "$@" "${TEMP_PATH}"
+composer create-project --ignore-platform-reqs "$@" "${TEMP_PATH}"
 
 for file in "$PROJECT_PATH"/*; do
    if [ -f "$TEMP_PATH/\${file##*/}" ]; then
