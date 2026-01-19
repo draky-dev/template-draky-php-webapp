@@ -1,8 +1,8 @@
 services:
   database:
     extends:
-      file: ../../services/mariadb/services.yml
-      service: mariadb
+      file: ../../services/postgres/services.yml
+      service: postgres
   webserver:
     extends:
       file: ../../services/nginx/services.yml
