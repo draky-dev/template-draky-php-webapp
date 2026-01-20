@@ -1,4 +1,4 @@
-.idea/
-*.iml
-dist/
-local/
+/.idea/
+/*.iml
+/dist/
+/local/

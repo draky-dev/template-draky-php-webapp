@@ -59,6 +59,14 @@ if php -m | grep -q ^pdo_pgsql; then
   docker-php-ext-install pdo_pgsql
 fi
 
+# pdo_sqlite
+if php -m | grep -q ^pdo_sqlite; then
+  echo "'pdo_sqlite' extension is already enabled"
+  else
+  apk add --no-cache sqlite
+  docker-php-ext-install pdo_sqlite
+fi
+
 # intl
 if php -m | grep -q ^intl; then
   echo "'intl' extension is already enabled"

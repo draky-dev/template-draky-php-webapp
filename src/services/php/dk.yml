@@ -1,6 +1,6 @@
 id: draky-webapp-php
 variables:
-  DRAKY_PHP_IMAGE: php:8.3.1-fpm-alpine3.19
+  DRAKY_PHP_IMAGE: php:8.4-fpm-alpine
   DRAKY_COMPOSER_IMAGE: composer:latest
   DRAKY_PHP_CONTAINER_ROOT: /var/www/html
   # Required for CLI debugging in PHP Storm and IntelliJ IDEA.
@@ -9,6 +9,6 @@ variables:
   DRAKY_PHP_IDE_CONFIG: serverName=docker
   DRAKY_PHP_COMPOSER_HASH_VERIFY: 1
   DRAKY_PHP_COMPOSER_HASH: aab940cd53d285a54c50465820a2080fcb7182a4ba1e5f795abfb10414a4b4be
-  DRAKY_PHP_XDEBUG_VERSION: 3.3.2
+  DRAKY_PHP_XDEBUG_VERSION: 3.5.0
   # The port xdebug connects to on the host.
   DRAKY_PHP_XDEBUG_PORT: 9000

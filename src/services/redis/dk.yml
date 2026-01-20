@@ -1,0 +1,3 @@
+id: draky-webapp-redis
+variables:
+  DRAKY_REDIS_IMAGE: redis:7-alpine

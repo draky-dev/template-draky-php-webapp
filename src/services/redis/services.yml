@@ -1,6 +1,6 @@
 services:
   redis:
-    image: redis:7.0.11-alpine
+    image: "${DRAKY_REDIS_IMAGE}"
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 1s

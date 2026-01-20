@@ -1,6 +1,6 @@
 id: draky-webapp-webserver
 variables:
-  DRAKY_NGINX_IMAGE: nginx:1.25.1-alpine
+  DRAKY_NGINX_IMAGE: nginx:1.25-alpine
   DRAKY_NGINX_ROOT: "/var/www/html"
   DRAKY_NGINX_FRONT_CONTROLLER: "${DRAKY_NGINX_ROOT}/public"
   DRAKY_NGINX_DOMAIN: webapp.docker.localhost

@@ -18,10 +18,14 @@ structure:
     ```
 ## Customizing template
 
-1. You can modify all the files to customize this template to your needs.
-    1. It's preferable to edit and rename the `overrides.dk.yml.example` file, and keep other variable files untouched.
-       That way it will be easier to update the template if needed.
-    2. Make sure that variables have values that fit your app, especially the `DRAKY_NGINX_FRONT_CONTROLLER` variable.
-    3. Make sure that at least one configuration is enabled in the `services/nginx/resources/override/etc/nginx/conf.d/` directory.
-    4. Make sure that all PHP extensions that you need are being installed by the `src/services/php/init.d/setup.sh` script.
-       Alternatively, create your own PHP image with required extensions preinstalled.
+You can modify all the files to customize this template to your needs.
+
+1. Look at the recipe at `env/dev/docker-compose.recipe.yml` and make sure that it extends all the
+   services you need.
+2. Make sure that variables used by the services' definitions are the ones you want. It's preferable
+   to edit and rename the `overrides.dk.yml.example` file, and keep other variable files untouched.
+   That way it's easier to see what has been customized.
+3. Make sure that at least one configuration is enabled in the `services/nginx/resources/override/etc/nginx/conf.d/` directory.
+   The enabled configuration has to have the `.conf` extension.
+4. Make sure that all PHP extensions that you need are being installed by the `src/services/php/init.d/setup.sh` script.
+   Alternatively, create your own PHP image with required extensions preinstalled.

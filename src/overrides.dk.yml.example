@@ -4,6 +4,13 @@ variables:
   DRAKY_NGINX_DOMAIN: webapp.docker.localhost
   DRAKY_NGINX_PORT: 8000
 
+  DRAKY_PHP_IMAGE: php:8.4-fpm-alpine
+  DRAKY_NGINX_IMAGE: nginx:1.25-alpine
+  DRAKY_MARIADB_IMAGE: mariadb:10-jammy
+  DRAKY_POSTGRES_IMAGE: postgres:16-alpine
+  DRAKY_REDIS_IMAGE: redis:7-alpine
+  DRAKY_MAILPIT_IMAGE: axllent/mailpit:latest
+
   # You may want to set the `DRAKY_PHP_COMPOSER_HASH_VERIFY` variable to 0 if you don't want to keep the composer's hash in the `DRAKY_PHP_COMPOSER_HASH` variable up to date.
   # Otherwise make sure the DRAKY_PHP_COMPOSER_HASH variable has the up to date value.
   # For security reasons it's recommended to keep `DRAKY_PHP_COMPOSER_HASH_VERIFY` at "1" and making sure that the `DRAKY_PHP_COMPOSER_HASH` variable has set to the correct value.
@@ -12,3 +19,7 @@ variables:
 
 dependencies:
   - draky-webapp-webserver
+  - draky-webapp-php
+  - draky-webapp-mariadb
+  - draky-webapp-postgres
+  - draky-webapp-mailpit
